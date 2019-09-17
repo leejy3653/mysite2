@@ -21,7 +21,7 @@ public class MainAction implements Action {
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null && cookies.length > 0) {
 			for (Cookie cookie : cookies) {
-				if("visitCount".contentEquals(cookie.getName())) {
+				if ("visitCount".contentEquals(cookie.getName())) {
 					count = Integer.parseInt(cookie.getValue());
 				}
 			}

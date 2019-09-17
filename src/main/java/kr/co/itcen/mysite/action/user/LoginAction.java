@@ -29,7 +29,7 @@ public class LoginAction implements Action {
 		// 인증처리(Session 처리)
 		HttpSession session = request.getSession(true); // 없으면 만들어서줘~
 		session.setAttribute("authUser", userVo);
-		
+
 		WebUtils.redirect(request, response, request.getContextPath());
 	}
 
