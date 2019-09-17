@@ -1,4 +1,4 @@
-package kr.co.itcen.mysite.action.main;
+package kr.co.itcen.mysite.action.user;
 
 import java.io.IOException;
 
@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 import kr.co.itcen.web.WebUtils;
 import kr.co.itcen.web.mvc.Action;
 
-public class MainAction implements Action {
+public class JoinFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		WebUtils.forward(request, response, "/WEB-INF/views/main/index.jsp");
+		WebUtils.forward(request, response, "/WEB-INF/views/user/joinform.jsp");
 	}
 
 }

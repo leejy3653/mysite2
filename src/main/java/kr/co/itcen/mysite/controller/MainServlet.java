@@ -1,4 +1,5 @@
 package kr.co.itcen.mysite.controller;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -13,19 +14,17 @@ import kr.co.itcen.web.mvc.ActionFactory;
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+
 		String actionName = request.getParameter("a");
 		ActionFactory actionFactory = new MainActionFactory();
 		Action action = actionFactory.getAction(actionName);
-		
+
 		action.execute(request, response);
-		//WebUtils.forward(request, response, "/WEB-INF/views/main/index.jsp");
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 
