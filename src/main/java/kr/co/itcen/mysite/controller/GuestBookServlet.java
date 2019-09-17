@@ -14,9 +14,6 @@ import kr.co.itcen.mysite.dao.GuestBookDao;
 import kr.co.itcen.mysite.vo.GuestBookVo;
 import kr.co.itcen.web.WebUtils;
 
-/**
- * Servlet implementation class GuestBookServlet
- */
 @WebServlet("/guestbook")
 public class GuestBookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
