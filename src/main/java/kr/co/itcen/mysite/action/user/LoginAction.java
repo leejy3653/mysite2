@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.co.itcen.mysite.dao.UserDao;
 import kr.co.itcen.mysite.vo.UserVo;
@@ -26,10 +27,10 @@ public class LoginAction implements Action {
 		}
 
 		// 인증처리(Session 처리)
-		//
-		//
-		//
-		//
+		HttpSession session = request.getSession(true); // 없으면 만들어서줘~
+		session.setAttribute("authUser", userVo);
+		
+		WebUtils.redirect(request, response, request.getContextPath());
 	}
 
 }
