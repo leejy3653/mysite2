@@ -117,6 +117,85 @@ public class UserDao {
 
 		return result;
 	}
+	public UserVo getUpdate(Long no) {
+		UserVo userVo = null;
+		Connection connection = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			connection = getConnection();
+
+			String sql = "select name, email, gender from user where no = ?";
+			pstmt = connection.prepareStatement(sql);
+			pstmt.setLong(1, no);
+			
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				String name = rs.getString(1);
+				String email = rs.getString(2);
+				String gender = rs.getString(3);
+				
+				userVo = new UserVo();
+				userVo.setName(name);
+				userVo.setEmail(email);
+				userVo.setGender(gender);
+			}
+		} catch (SQLException e) {
+			System.out.println("error : " + e);
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return userVo;
+	}
+	
+	public boolean update(UserVo vo) {
+		Boolean result = false;
+		Connection connection = null;
+		PreparedStatement pstmt = null;
+		try {
+			connection = getConnection();
+
+			String sql = "update user set name = ?, email = ?, gender = ? where no = ?";
+			pstmt = connection.prepareStatement(sql);
+			pstmt.setString(1, vo.getName());
+			pstmt.setString(2, vo.getEmail());
+			pstmt.setString(3, vo.getGender());
+			pstmt.setLong(4, vo.getNo());
+			
+			int count = pstmt.executeUpdate();
+			result = (count == 1);
+		} catch (SQLException e) {
+			System.out.println("error : " + e);
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+
+	
 
 	private Connection getConnection() throws SQLException {
 		Connection connection = null;
