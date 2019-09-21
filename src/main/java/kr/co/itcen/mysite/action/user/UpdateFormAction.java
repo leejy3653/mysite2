@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import kr.co.itcen.mysite.dao.UserDao;
 import kr.co.itcen.mysite.vo.UserVo;
 import kr.co.itcen.web.WebUtils;
 import kr.co.itcen.web.mvc.Action;
@@ -27,8 +28,11 @@ public class UpdateFormAction implements Action {
 			WebUtils.redirect(request, response, request.getContextPath());
 			return;
 		}
-		// Long no = authUser.getNo();
+
+		Long no = authUser.getNo();
+		UserVo updateVo = new UserDao().getUpdate(no);
+		
+		request.setAttribute("updateUser", updateVo);
 		WebUtils.forward(request, response, "WEB-INF/views/user/updateform.jsp");
 	}
-
 }
