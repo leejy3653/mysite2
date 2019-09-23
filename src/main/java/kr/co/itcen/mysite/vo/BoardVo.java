@@ -4,13 +4,15 @@ public class BoardVo {
 	private Long no;
 	private String title;
 	private String contents;
-	private Integer hit;
 	private String reg_Date;
+	private Integer hit;
 	private Integer g_no;
 	private Integer o_no;
 	private Integer depth;
 	private Long user_no;
+	private Long max_no;
 	private String username;
+	private int count;
 
 	public Long getNo() {
 		return no;
@@ -36,20 +38,20 @@ public class BoardVo {
 		this.contents = contents;
 	}
 
-	public Integer getHit() {
-		return hit;
-	}
-
-	public void setHit(Integer hit) {
-		this.hit = hit;
-	}
-
 	public String getReg_Date() {
 		return reg_Date;
 	}
 
 	public void setReg_Date(String reg_Date) {
 		this.reg_Date = reg_Date;
+	}
+
+	public Integer getHit() {
+		return hit;
+	}
+
+	public void setHit(Integer hit) {
+		this.hit = hit;
 	}
 
 	public Integer getG_no() {
@@ -84,6 +86,14 @@ public class BoardVo {
 		this.user_no = user_no;
 	}
 
+	public Long getMax_no() {
+		return max_no;
+	}
+
+	public void setMax_no(Long max_no) {
+		this.max_no = max_no;
+	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -92,11 +102,18 @@ public class BoardVo {
 		this.username = username;
 	}
 
-	@Override
-	public String toString() {
-		return "BoardVo [no=" + no + ", title=" + title + ", contents=" + contents + ", hit=" + hit + ", reg_Date="
-				+ reg_Date + ", g_no=" + g_no + ", o_no=" + o_no + ", depth=" + depth + ", user_no=" + user_no
-				+ ", username=" + username + "]";
+	public int getCount() {
+		return count;
 	}
 
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	@Override
+	public String toString() {
+		return "BoardVo [no=" + no + ", title=" + title + ", contents=" + contents + ", reg_Date=" + reg_Date + ", hit="
+				+ hit + ", g_no=" + g_no + ", o_no=" + o_no + ", depth=" + depth + ", user_no=" + user_no + ", max_no="
+				+ max_no + ", username=" + username + ", count=" + count + "]";
+	}
 }
