@@ -203,7 +203,7 @@ public class UserDao {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 
-			String url = "jdbc:mariadb://192.168.0.19:3306/webdb?characterEncoding=utf8";
+			String url = "jdbc:mariadb://192.168.1.116:3306/webdb?characterEncoding=utf8";
 			connection = DriverManager.getConnection(url, "webdb", "webdb");
 
 		} catch (ClassNotFoundException e) {

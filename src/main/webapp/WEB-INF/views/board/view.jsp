@@ -67,7 +67,7 @@
 						<tr>
 							<td class="label">${cl.username }</td>
 							<td>${cl.comment }</td>
-							<td><c:if test="${cl.user_no == authuser.no }">
+							<td><c:if test="${cl.getUser_no() == authUser.getNo() ||vo.getUser_no() == authUser.getNo()}"> <!-- 원 글 작성자 또는 답글 작성자만 답글 삭제 가능 -->
 									<a
 										href="${pageContext.servletContext.contextPath }/board?a=deletecomment&no=${cl.no }&g_no=${param.g_no }&o_no=${param.o_no }"
 										class="del"> 삭제 </a>
