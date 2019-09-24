@@ -15,17 +15,12 @@ public class DeleteAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		
-		
 		Long no = Long.parseLong(request.getParameter("no"));
-		
+
 		BoardVo vo = new BoardVo();
 		vo.setNo(no);
 		new BoardDao().delete(vo);
-		
-		WebUtils.redirect(request, response, request.getContextPath()+"/board?a=select");
 
+		WebUtils.redirect(request, response, request.getContextPath() + "/board?a=select");
 	}
-
 }

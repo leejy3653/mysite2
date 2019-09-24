@@ -29,21 +29,18 @@ public class InsertAction implements Action {
 			WebUtils.redirect(request, response, request.getContextPath());
 			return;
 		}
-		
+
 		String title = request.getParameter("title");
 		String contents = request.getParameter("content");
 
-
-		//Long user_no = Long.parseLong(user_no_string);
-		
 		BoardVo vo = new BoardVo();
 		vo.setTitle(title);
 		vo.setContents(contents);
 		vo.setUser_no(authUser.getNo());
-		
+
 		new BoardDao().insert(vo);
-		
-		WebUtils.redirect(request, response, request.getContextPath()+"/board?a=select");
+
+		WebUtils.redirect(request, response, request.getContextPath() + "/board?a=select");
 
 	}
 
