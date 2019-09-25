@@ -193,7 +193,11 @@ public class BoardDao {
 		try {
 			conn = getConnection();
 
-			String sql = "delete from board where no=?";
+			//1. 원래 쿼리
+			// String sql = "delete from board where no=?";
+			
+			//2. 원글이 삭제된 게시글입니다.
+			String sql ="update board set title='원글이 삭제된 게시글 입니다.', contents='게시자의 요청에 의해 본문이 삭제되었습니다.' where no=?";
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setLong(1, boardVo.getNo());
