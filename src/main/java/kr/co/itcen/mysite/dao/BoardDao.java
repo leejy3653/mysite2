@@ -386,7 +386,7 @@ public class BoardDao {
 		return boardVo;
 	}
 
-	public int count() {
+	public int count() { // 게시글 수 count
 		int count = 0;
 
 		Connection conn = null;
@@ -424,7 +424,7 @@ public class BoardDao {
 		return count;
 	}
 
-	public int count(String kwd) {
+	public int count(String kwd) { // 제목 검색결과 count
 		int count = 0;
 
 		Connection conn = null;
