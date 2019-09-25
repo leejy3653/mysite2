@@ -32,17 +32,16 @@ public class InsertCommentAction implements Action {
 		int g_no = Integer.parseInt(request.getParameter("g_no"));
 		int o_no = Integer.parseInt(request.getParameter("o_no"));
 		String contents = request.getParameter("content");
-		//Long user_no = Long.parseLong(request.getParameter("user_no"));
-		
+
 		CommentVo vo = new CommentVo();
 		vo.setUser_no(authUser.getNo());
 		vo.setG_no(g_no);
 		vo.setO_no(o_no);
 		vo.setComment(contents);
-		
+
 		new BoardDao().insert(vo);
-		
-		WebUtils.redirect(request, response, request.getContextPath()+"/board?a=view&g_no="+g_no+"&o_no="+o_no);
+
+		WebUtils.redirect(request, response, request.getContextPath() + "/board?a=view&g_no=" + g_no + "&o_no=" + o_no);
 
 	}
 
