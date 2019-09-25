@@ -44,8 +44,6 @@ public class ReplyAction implements Action {
 		depth = depth + 1;
 
 		BoardVo vo = new BoardVo();
-		// vo.setG_no(g_no);
-		// vo.setDepth(depth);
 		vo.setG_no(g_no);
 		vo.setO_no(o_no);
 		vo.setDepth(depth);

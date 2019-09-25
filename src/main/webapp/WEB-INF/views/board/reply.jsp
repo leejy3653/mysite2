@@ -2,7 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+	pageEncoding="utf-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -18,12 +18,13 @@
 		<c:import url="/WEB-INF/views/includes/header.jsp" />
 		<div id="content">
 			<div id="board">
-				<form class="board-form" method="post" action="${pageContext.servletContext.contextPath }/board">
-					<input type="hidden" name="a" value="reply">
-					<input type="hidden" name="user_no" value="${param.user_no }">
-					<input type="hidden" name="g_no" value="${param.g_no }">
-					<input type="hidden" name="o_no" value="${param.o_no }">
-					<input type="hidden" name="depth" value="${param.depth }">
+				<form class="board-form" method="post"
+					action="${pageContext.servletContext.contextPath }/board">
+					<input type="hidden" name="a" value="reply"> <input
+						type="hidden" name="user_no" value="${param.user_no }"> <input
+						type="hidden" name="g_no" value="${param.g_no }"> <input
+						type="hidden" name="o_no" value="${param.o_no }"> <input
+						type="hidden" name="depth" value="${param.depth }">
 					<table class="tbl-ex">
 						<tr>
 							<th colspan="2">글쓰기</th>
@@ -38,7 +39,9 @@
 						</tr>
 					</table>
 					<div class="bottom">
-						<a href="${pageContext.servletContext.contextPath }/board?a=select">취소</a> <input type="submit" value="등록">
+						<a
+							href="${pageContext.servletContext.contextPath }/board?a=select">취소</a>
+						<input type="submit" value="등록">
 					</div>
 				</form>
 			</div>

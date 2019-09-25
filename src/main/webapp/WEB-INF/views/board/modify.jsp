@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	pageContext.setAttribute("newline",	"\n");
+	pageContext.setAttribute("newline", "\n");
 %>
 
 <!DOCTYPE html>
@@ -21,7 +21,8 @@
 		<c:import url="/WEB-INF/views/includes/header.jsp" />
 		<div id="content">
 			<div id="board">
-				<form class="board-form" method="post" action="${pageContext.servletContext.contextPath }/board?a=modifyForm&no=${param.no }&page=${page }">
+				<form class="board-form" method="post"
+					action="${pageContext.servletContext.contextPath }/board?a=modifyForm&no=${param.no }&page=${page }">
 					<table class="tbl-ex">
 						<tr>
 							<th colspan="2">글수정</th>
@@ -36,7 +37,9 @@
 						</tr>
 					</table>
 					<div class="bottom">
-						<a href="${pageContext.servletContext.contextPath }/board?a=select">취소</a> <input type="submit" value="수정">
+						<a
+							href="${pageContext.servletContext.contextPath }/board?a=select">취소</a>
+						<input type="submit" value="수정">
 					</div>
 				</form>
 			</div>

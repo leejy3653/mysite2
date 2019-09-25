@@ -45,18 +45,15 @@
 							<td>${vo.username }</td>
 							<td>${vo.hit }</td>
 							<td>${vo.reg_Date }</td>
-							<td>
-							<c:if test="${vo.getUser_no() == authUser.getNo() }">
+							<td><c:if test="${vo.getUser_no() == authUser.getNo() }">
 									<a
 										href="${pageContext.servletContext.contextPath }/board?a=delete&no=${vo.no }"
 										class="del"> 삭제 </a>
-										</c:if>
-								</td>
+								</c:if></td>
 						</tr>
 					</c:forEach>
 				</table>
 
-				<!-- pager 추가 -->
 				<c:if test="${kwd == null }">
 
 					<div class="pager">
@@ -138,10 +135,6 @@
 						</ul>
 					</div>
 				</c:if>
-				<!-- pager 추가 -->
-
-
-
 				<div class="bottom">
 					<c:if test="${not empty authUser }">
 						<a
