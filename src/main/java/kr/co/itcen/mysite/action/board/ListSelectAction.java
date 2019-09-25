@@ -17,7 +17,6 @@ public class ListSelectAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		
 		HttpSession session = request.getSession();
 
 		String page = request.getParameter("page");

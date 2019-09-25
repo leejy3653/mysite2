@@ -1,9 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<% request.setCharacterEncoding("euc-kr"); %>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,19 +26,19 @@
 					<input type="hidden" name="depth" value="${param.depth }">
 					<table class="tbl-ex">
 						<tr>
-							<th colspan="2">±Û¾²±â</th>
+							<th colspan="2">ê¸€ì“°ê¸°</th>
 						</tr>
 						<tr>
-							<td class="label">Á¦¸ñ</td>
+							<td class="label">ì œëª©</td>
 							<td><input type="text" name="title" value="${param.title }"></td>
 						</tr>
 						<tr>
-							<td class="label">³»¿ë</td>
+							<td class="label">ë‚´ìš©</td>
 							<td><textarea id="content" name="content"></textarea></td>
 						</tr>
 					</table>
 					<div class="bottom">
-						<a href="${pageContext.servletContext.contextPath }/board?a=select">Ãë¼Ò</a> <input type="submit" value="µî·Ï">
+						<a href="${pageContext.servletContext.contextPath }/board?a=select">ì·¨ì†Œ</a> <input type="submit" value="ë“±ë¡">
 					</div>
 				</form>
 			</div>

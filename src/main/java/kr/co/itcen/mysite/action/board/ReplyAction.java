@@ -29,14 +29,14 @@ public class ReplyAction implements Action {
 			WebUtils.redirect(request, response, request.getContextPath());
 			return;
 		}
-		
+
 		int g_no = Integer.parseInt(request.getParameter("g_no"));
 		int o_no = Integer.parseInt(request.getParameter("o_no"));
 		int depth = Integer.parseInt(request.getParameter("depth"));
-		//Long user_no = Long.parseLong(request.getParameter("user_no"));
-		//String g_no = request.getParameter("g_no");
-		//String o_no = request.getParameter("o_no");
-		//String depth = request.getParameter("depth");
+		// Long user_no = Long.parseLong(request.getParameter("user_no"));
+		// String g_no = request.getParameter("g_no");
+		// String o_no = request.getParameter("o_no");
+		// String depth = request.getParameter("depth");
 		String title = request.getParameter("title");
 		String contents = request.getParameter("content");
 
@@ -44,12 +44,12 @@ public class ReplyAction implements Action {
 		depth = depth + 1;
 
 		BoardVo vo = new BoardVo();
-		//vo.setG_no(g_no);
-		//vo.setDepth(depth);
+		// vo.setG_no(g_no);
+		// vo.setDepth(depth);
 		vo.setG_no(g_no);
 		vo.setO_no(o_no);
 		vo.setDepth(depth);
-		vo.setTitle("[답글]"+title);
+		vo.setTitle(title);
 		vo.setContents(contents);
 		vo.setUser_no(authUser.getNo());
 

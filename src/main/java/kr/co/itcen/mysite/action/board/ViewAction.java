@@ -19,20 +19,20 @@ public class ViewAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		
+
 		int g_no = Integer.parseInt(request.getParameter("g_no"));
 		int o_no = Integer.parseInt(request.getParameter("o_no"));
-		
+
 		BoardVo vo = new BoardDao().get(g_no, o_no);
 		vo.setG_no(g_no);
 		vo.setO_no(o_no);
-		
+
 		List<CommentVo> cl = new BoardDao().getListComment(g_no, o_no);
-				
+
 		request.setAttribute("authuser", session.getAttribute("authuser"));
 		request.setAttribute("vo", vo);
 		request.setAttribute("cl", cl);
-		
+
 		WebUtils.forward(request, response, "/WEB-INF/views/board/view.jsp");
 
 	}

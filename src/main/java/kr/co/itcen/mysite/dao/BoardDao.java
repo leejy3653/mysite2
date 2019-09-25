@@ -46,7 +46,7 @@ public class BoardDao {
 			result = (count == 1);
 
 		} catch (SQLException e) {
-			System.out.println("Error : " + e);
+			System.out.println("error : " + e);
 		} finally {
 			try {
 				if (pstmt != null) {
@@ -85,7 +85,7 @@ public class BoardDao {
 			result = (count == 1);
 
 		} catch (SQLException e) {
-			System.out.println("Error : " + e);
+			System.out.println("error : " + e);
 		} finally {
 			try {
 				if (pstmt != null) {
@@ -133,7 +133,7 @@ public class BoardDao {
 			result = (count == 1);
 
 		} catch (SQLException e) {
-			System.out.println("Error : " + e);
+			System.out.println("error : " + e);
 		} finally {
 			try {
 				if (pstmt != null) {
@@ -168,7 +168,7 @@ public class BoardDao {
 			result = (count == 1);
 
 		} catch (SQLException e) {
-			System.out.println("Error : " + e);
+			System.out.println("error : " + e);
 		} finally {
 			try {
 				if (pstmt != null) {
@@ -207,7 +207,7 @@ public class BoardDao {
 			result = (count == 1);
 
 		} catch (SQLException e) {
-			System.out.println("Error : " + e);
+			System.out.println("error : " + e);
 		} finally {
 			try {
 				if (pstmt != null) {
@@ -257,7 +257,7 @@ public class BoardDao {
 			result = (count == 1);
 
 		} catch (SQLException e) {
-			System.out.println("Error : " + e);
+			System.out.println("error : " + e);
 		} finally {
 			try {
 				if (pstmt != null) {
@@ -313,7 +313,7 @@ public class BoardDao {
 			}
 
 		} catch (SQLException e) {
-			System.out.println("Error : " + e);
+			System.out.println("error : " + e);
 		} finally {
 			try {
 				if (pstmt != null) {
@@ -367,7 +367,7 @@ public class BoardDao {
 			}
 
 		} catch (SQLException e) {
-			System.out.println("Error : " + e);
+			System.out.println("error : " + e);
 		} finally {
 			try {
 				if (pstmt != null) {
@@ -386,7 +386,7 @@ public class BoardDao {
 		return boardVo;
 	}
 
-	public int count() { // 게시글 수 count
+	public int count() {// 게시글 수 count
 		int count = 0;
 
 		Connection conn = null;
@@ -442,7 +442,7 @@ public class BoardDao {
 			}
 
 		} catch (SQLException e) {
-			System.out.println("Error : " + e);
+			System.out.println("error : " + e);
 		} finally {
 			try {
 				if (pstmt != null) {
@@ -603,7 +603,7 @@ public class BoardDao {
 		}
 		return list;
 	}
-
+	
 	private Connection getConnection() throws SQLException {
 
 		Connection conn = null;
@@ -616,7 +616,7 @@ public class BoardDao {
 
 		} catch (ClassNotFoundException e) {
 
-			System.out.println("드라이버 로딩 실패 :" + e);
+			System.out.println("Fail to Loading Driver :" + e);
 
 		}
 

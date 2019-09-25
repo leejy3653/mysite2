@@ -117,26 +117,27 @@ public class UserDao {
 
 		return result;
 	}
+
 	public UserVo getUpdate(Long no) {
 		UserVo userVo = null;
 		Connection connection = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
+
 		try {
 			connection = getConnection();
 
 			String sql = "select name, email, gender from user where no = ?";
 			pstmt = connection.prepareStatement(sql);
 			pstmt.setLong(1, no);
-			
+
 			rs = pstmt.executeQuery();
-			
+
 			while (rs.next()) {
 				String name = rs.getString(1);
 				String email = rs.getString(2);
 				String gender = rs.getString(3);
-				
+
 				userVo = new UserVo();
 				userVo.setName(name);
 				userVo.setEmail(email);
@@ -161,7 +162,7 @@ public class UserDao {
 		}
 		return userVo;
 	}
-	
+
 	public boolean update(UserVo vo) {
 		Boolean result = false;
 		Connection connection = null;
@@ -175,7 +176,7 @@ public class UserDao {
 			pstmt.setString(2, vo.getEmail());
 			pstmt.setString(3, vo.getGender());
 			pstmt.setLong(4, vo.getNo());
-			
+
 			int count = pstmt.executeUpdate();
 			result = (count == 1);
 		} catch (SQLException e) {
@@ -195,14 +196,11 @@ public class UserDao {
 		return result;
 	}
 
-	
-
 	private Connection getConnection() throws SQLException {
 		Connection connection = null;
 
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
-
 			String url = "jdbc:mariadb://192.168.1.116:3306/webdb?characterEncoding=utf8";
 			connection = DriverManager.getConnection(url, "webdb", "webdb");
 

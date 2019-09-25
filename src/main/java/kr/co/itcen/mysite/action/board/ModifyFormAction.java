@@ -29,20 +29,19 @@ public class ModifyFormAction implements Action {
 			WebUtils.redirect(request, response, request.getContextPath());
 			return;
 		}
-		
+
 		String title = request.getParameter("title");
 		String contents = request.getParameter("content");
 		Long no = Long.parseLong(request.getParameter("no"));
-		
-		
+
 		BoardVo vo = new BoardVo();
-		vo.setTitle("[수정된 게시글]"+title);
+		vo.setTitle("(수정)" + title);
 		vo.setContents(contents);
 		vo.setNo(no);
-		
+
 		new BoardDao().update(vo);
-		
-		WebUtils.redirect(request, response, request.getContextPath()+"/board?a=select");
+
+		WebUtils.redirect(request, response, request.getContextPath() + "/board?a=select");
 
 	}
 
